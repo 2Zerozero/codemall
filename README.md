@@ -9,16 +9,30 @@
 
 ## 폴더 구조
 
-## Next.js
+## Router
 
-### 라우팅
+Next.js 는 파일 시스템 라우팅을 사용한다.
 
-- 파일 시스템 라우팅
-
-  - 파일 시스템 라우팅은 파일 시스템 구조에 따라 라우팅을 결정하는 방식
+- 파일 시스템 라우팅은 파일 시스템 구조에 따라 라우팅을 결정하는 방식
 
 ### Link
 
 - Link 는 페이지 이동을 위한 컴포넌트
 - 페이지 이동 시 페이지 이동 애니메이션이 적용됨
 - 페이지 전체를 불러오는 것이 아닌, 필요한 데이터만 렌더링 해오기 때문에 초기 로딩 속도가 빠름
+
+### useRouter
+
+- useRouter 는 현재 라우터 정보를 가져오기 위한 훅
+- 현재 라우터 정보를 가져오기 위해서는 현재 라우터 정보를 가져오기 위한 훅을 사용해야 함
+
+```
+import { useRouter } from 'next/router';
+
+export default function Search() {
+  const router = useRouter(); // 현재 라우터 정보를 가져오기 위한 훅
+  const { q } = router.query; // 라우터 쿼리 이름 지정
+
+  return <div>Search: {q}</div>;
+}
+```
