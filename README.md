@@ -36,3 +36,14 @@ export default function Search() {
   return <div>Search: {q}</div>;
 }
 ```
+
+## Axios
+
+- Axios 는 HTTP 요청을 보내기 위한 라이브러리
+- 라이브러리 설치
+  - `npm install axios`
+- 라이브러리 사용
+  - `import axios from 'axios';`
+- Instance 생성
+  - `const instance = axios.create({ baseURL: 'https://learn.codeit.kr/api/codeitmall' });`
+  - baseURL 은 기본 요청 URL
