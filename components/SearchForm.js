@@ -1,15 +1,15 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 
-const SearchForm = ({ initialValue = '' }: { initialValue: string }) => {
+const SearchForm = ({ initialValue = '' }) => {
   // 검색 값
   const [value, setValue] = useState(initialValue);
   const router = useRouter();
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleChange(e) {
     setValue(e.target.value);
   }
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e) {
     e.preventDefault();
     router.push(`/search?q=${value}`);
   }

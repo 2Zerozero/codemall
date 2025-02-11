@@ -24,7 +24,8 @@
     "pages/products/[id]/index.js",
     "pages/setting.js",
     "pages/search.js",
-    "pages/index.js"
+    "pages/index.js",
+    "components/SearchForm.js"
   ],
   "exclude": ["node_modules"]
 }
