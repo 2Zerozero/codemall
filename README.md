@@ -47,3 +47,16 @@ export default function Search() {
 - Instance 생성
   - `const instance = axios.create({ baseURL: 'https://learn.codeit.kr/api/codeitmall' });`
   - baseURL 은 기본 요청 URL
+
+## Redirects
+
+- 리다이렉트 설정
+
+  - `redirects` 에 설정
+  - `redirects` 는 배열로 설정
+  - 배열 안에 객체로 설정
+  - 객체 안에 `source` 와 `destination` 을 설정
+
+- 페이지의 주소를 변경하고 싶을 때 사용
+
+[문서 참고](https://nextjs.org/docs/app/api-reference/config/next-config-js/redirects)
