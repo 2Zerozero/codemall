@@ -1,14 +1,17 @@
-import SearchForm from '@/components/SearchForm';
-import { useState, useEffect } from 'react';
-import axios from '@/lib/axios';
+import { useEffect, useState } from 'react';
 import ProductList from '@/components/ProductList';
+import SearchForm from '@/components/SearchForm';
+import axios from '@/lib/axios';
+import styles from '@/styles/Home.module.css';
+import Header from '@/components/Header';
+import Container from '@/components/Container';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
 
   async function getProducts() {
-    const response = await axios.get('/products');
-    const nextProducts = response.data.results;
+    const res = await axios.get('/products');
+    const nextProducts = res.data.results;
     setProducts(nextProducts);
   }
 
@@ -16,12 +19,13 @@ export default function Home() {
     getProducts();
   }, []);
 
-  console.log(products);
   return (
     <>
-      <h1>Codeitmall</h1>
-      <SearchForm />
-      <ProductList products={products} />
+      <Header />
+      <Container>
+        <SearchForm />
+        <ProductList className={styles.products} products={products} />
+      </Container>
     </>
-  );
+  )
 }
