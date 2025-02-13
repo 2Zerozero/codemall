@@ -60,3 +60,23 @@ export default function Search() {
 - 페이지의 주소를 변경하고 싶을 때 사용
 
 [문서 참고](https://nextjs.org/docs/app/api-reference/config/next-config-js/redirects)
+
+## Image
+
+- Image 는 이미지를 표시하기 위한 컴포넌트
+- 이미지 표시 시 이미지 크기를 지정할 수 있음
+- Lazy Loading 이 적용되어 이미지 로딩 시 초기 로딩 속도가 빠름
+- Next.js의 Image 컴포넌트에서 외부 이미지를 사용할 때 보안상의 이유로 해당 이미지 도메인을 미리 설정이 필요하다.
+
+```
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'example.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
+```
